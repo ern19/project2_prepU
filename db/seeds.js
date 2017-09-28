@@ -34,9 +34,28 @@ RecipeModel.remove({}, function (err){
 // Create some Companies and Snowboards
 const aaronTrammell = new UserModel({ name: "Aaron Trammell" })
 
-const chiliIngredients = [{name: "canned tomatoes"}, {name: "ground beef"}, {name: "onions"}, {name: "peppers"}, {name: "beer"}, {name: "beans"}]
-const beansAndRiceIngredients = [{name: "Rice"}, {name: "onions"}, {name: "veggie broth"}, {name: "black beans"}, {name: "garlic"}]
-const veggieSoupIngredients = [{name: "celery"}, {name: "frozen veggie"}, {name: "onions"}, {name: "veggie or chicken broth"}, {name: "black beans"}]
+const chiliIngredients = [
+    new IngredientModel({name: "canned tomatoes"}), 
+    new IngredientModel({name: "ground beef"}), 
+    new IngredientModel({name: "onions"}), 
+    new IngredientModel({name: "peppers"}), 
+    new IngredientModel({name: "beer"}), 
+    new IngredientModel({name: "beans"})
+]
+const beansAndRiceIngredients = [
+    new IngredientModel({name: "Rice"}), 
+    new IngredientModel({name: "onions"}), 
+    new IngredientModel({name: "veggie broth"}), 
+    new IngredientModel({name: "black beans"}), 
+    new IngredientModel({name: "garlic"})
+]
+const veggieSoupIngredients = [
+    new IngredientModel({name: "celery"}), 
+    new IngredientModel({name: "frozen veggie"}), 
+    new IngredientModel({name: "onions"}), 
+    new IngredientModel({name: "veggie or chicken broth"}), 
+    new IngredientModel({name: "black beans"})
+]
 
 const chili = new RecipeModel({ name: 'Crockpot Chili', ingredients: chiliIngredients, url: "http://allrecipes.com/recipe/48449/slow-cooker-chili-ii/", servingNumber: 8, submittedBy: aaronTrammell })
 const beansAndRice = new RecipeModel({ name: 'Black Beans and Rice', ingredients: beansAndRiceIngredients, url: "http://allrecipes.com/recipe/15559/black-beans-and-rice/", servingNumber: 4, submittedBy: aaronTrammell })
