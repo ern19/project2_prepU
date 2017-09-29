@@ -8,31 +8,37 @@
         <p class="mainHeader">And where to find it!</p>
     </ul>
 	
+ 
     <form action="/recipes" method="POST"></br>
 
         <label for="name">Recipe Name</label>
-        <input type="text" name="name">
+        <input type="text" name="name" value="{{recipe.name}}">
 
-        <label for="ingredient">Ingredient 1</label>
-        <input type="text" name="ingredient">
+        {{#each recipe.ingredients}}
+            <label for="name">Ingredient</label>
+            <input type="text" name="name" value="{{this.name}}">
+        {{/each}}
+
+        {{!-- <label for="ingredient">Ingredient 1</label>
+        <input type="text" name="ingredient" value="2">
 
         <label for="ingredient">Ingredient 2</label>
-        <input type="text" name="ingredient">
+        <input type="text" name="ingredient1" value='{{recipe.ingredients[0]}}'>
 
         <label for="ingredient">Ingredient 3</label>
-        <input type="text" name="ingredient">
+        <input type="text" name="ingredient2" value="">
 
         <label for="ingredient">Ingredient 4</label>
-        <input type="text" name="ingredient">
+        <input type="text" name="ingredient3" value="">
 
         <label for="ingredient">Ingredient 5</label>
-        <input type="text" name="ingredient">
+        <input type="text" name="ingredient4" value=""> --}}
 
         <label for="url">Recipe Link</label>
-        <input type="text" name="url">
+        <input type="text" name="url" value="{{recipe.url}}">
 
         <label for="url">How many servings does it make?</label>
-        <input type="text" name="servingNumber">
+        <input type="text" name="servingNumber" value="{{recipe.servingNumber}}">
 
         <input type="submit" value="Create" class="submitButton">
 
