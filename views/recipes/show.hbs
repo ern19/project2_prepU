@@ -1,0 +1,22 @@
+<main>
+    <div class="col s4 card amber darken-4">
+        
+            <h1>{{recipe.name}}</h1>
+            {{#each recipe}}
+                    <ul>
+                        <h5 class="recipeTitle">{{this.name}}</h5>
+                        </br>
+                    </ul>
+                    {{#each ingredients}}
+                        <div>
+                            <ul>
+                                <li> {{this.name}}</li>                          
+                            </ul>      
+                        </div>
+                    {{/each}}
+                    
+                    </br>
+            {{/each}}
+            <a href="{{this.url}}">Passed the pantry test? Get to cooking!</a>
+    </div>
+</main>

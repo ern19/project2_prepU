@@ -31,4 +31,18 @@ router.post("/", (request, response) => {
             console.log(error)
         })
 })
+
+router.get("/:recipeId", (request, response) => {
+    const recipeId = request.params.recipeId
+
+    RecipeModel.findById(recipeId)
+        .then((recipe) => {
+            response.render("recipes/show", {
+                recipe: recipe
+            })
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+})
 module.exports = router
