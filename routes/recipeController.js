@@ -32,6 +32,19 @@ router.post("/", (request, response) => {
         })
 })
 
+router.get("/:recipeId/edit", (request, response) => {
+    const recipeId = request.params.recipeId
+
+    RecipeModel.findById(recipeId)
+        .then((recipe) => {
+            response.render("recipes/edit", {
+                recipe: recipe
+            })
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+})
 router.get("/:recipeId", (request, response) => {
     const recipeId = request.params.recipeId
 
