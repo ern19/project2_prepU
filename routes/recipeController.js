@@ -3,6 +3,7 @@ const router = express.Router()
 
 const Schema = require("../db/schema.js")
 const RecipeModel = Schema.RecipeModel
+const IngredientModel = Schema.RecipeModel
 
 router.get("/", (request, response) => {
     RecipeModel.find({})
@@ -24,8 +25,12 @@ router.get('/new', (request, response) => {
 
 //create route
 router.post("/", (request, response) => {
-    
     const newRecipe = request.body
+    const ingredients = newRecipe.ingredients.map(ingredient =>{
+        return new IngredientModel({name: ingredient})
+    })
+    
+    newRecipe.ingredients = ingredients
     console.log(request.body)
     RecipeModel.create(newRecipe)
         .then(() => {
