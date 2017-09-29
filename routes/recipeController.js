@@ -26,12 +26,13 @@ router.get('/new', (request, response) => {
 //create route
 router.post("/", (request, response) => {
     const newRecipe = request.body
+    // console.log(newRecipe)
     const ingredients = newRecipe.ingredients.map(ingredient =>{
         return new IngredientModel({name: ingredient})
     })
     
     newRecipe.ingredients = ingredients
-    console.log(request.body)
+    
     RecipeModel.create(newRecipe)
         .then(() => {
             response.redirect("/recipes")
@@ -64,6 +65,27 @@ router.get("/:recipeId", (request, response) => {
             response.render("recipes/show", {
                 recipe: recipe
             })
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+})
+
+router.put("/:recipeId", (request, response) => {
+    recipeId = request.params.recipeId
+
+    const updatedRecipe = request.body
+
+    console.log(updatedRecipe)
+    const ingredients = updatedRecipe.name.map(ingredient =>{
+        return new IngredientModel({name: ingredient})
+    })
+    
+    updatedRecipe.ingredients = ingredients
+    
+    RecipeModel.findByIdAndUpdate(recipeId)
+        .then(() => {
+            response.redirect("/recipes/recipeId")
         })
         .catch((error) => {
             console.log(error)
