@@ -16,13 +16,17 @@ router.get("/", (request, response) => {
         })
 })
 
+//new route
 router.get('/new', (request, response) => {
     // RENDER an empty form for the new recipe
     response.render('recipes/new')
 })
 
+//create route
 router.post("/", (request, response) => {
+    
     const newRecipe = request.body
+    console.log(request.body)
     RecipeModel.create(newRecipe)
         .then(() => {
             response.redirect("/recipes")
@@ -32,6 +36,7 @@ router.post("/", (request, response) => {
         })
 })
 
+//edit route
 router.get("/:recipeId/edit", (request, response) => {
     const recipeId = request.params.recipeId
 
@@ -45,7 +50,7 @@ router.get("/:recipeId/edit", (request, response) => {
             console.log(error)
         })
 })
-
+//show route
 router.get("/:recipeId", (request, response) => {
     const recipeId = request.params.recipeId
 
