@@ -5,6 +5,23 @@ body {
   background-color: #263238 
 }
 
-a {
-  color: #00B7FF;
+
+.recipeTitle {
+  text-decoration: underline;
+}
+.recipeLinks {
+  color: #263238
+}
+.recipeLinks:hover {
+  font-size: 18px;
+}
+.mainHeader {
+  color: #ff6f00
+}
+.nav-wrapper {
+  background-color: #ff6f00;
+  border-radius: 8px
+}
+.returnAnchor {
+  color: #ff6f00
 }

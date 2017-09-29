@@ -16,4 +16,8 @@ router.get("/", (request, response) => {
         })
 })
 
+router.get('/new', (request, response) => {
+    // RENDER an empty form for the new recipe
+    response.render('recipes/new')
+})
 module.exports = router

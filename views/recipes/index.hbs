@@ -4,12 +4,13 @@
         {{#each recipes}}
             <div>
                 <ul>
-                    <li>{{this.name}}</li>
+                    <li><a class="recipeLinks" href="#">{{this.name}}</li></a>
                     </br>
                 </ul>
         
             </div>
         {{/each}}
+        <a class="recipeLinks" href="#">Share your favorite recipe...</a>
     </div>
 
 
@@ -18,7 +19,7 @@
             <h1>Pantry Check!</h1>
             {{#each recipes}}
                     <ul>
-                        <li>{{this.name}}</li>
+                        <h5 class="recipeTitle">{{this.name}}</h5>
                         </br>
                     </ul>
                     {{#each ingredients}}
@@ -28,9 +29,10 @@
                             </ul>      
                         </div>
                     {{/each}}
+                    <a href="{{this.url}}">Passed the pantry test? Get to cooking!</a>
                     </br>
             {{/each}}
-           
+        
     </div>
 
 
