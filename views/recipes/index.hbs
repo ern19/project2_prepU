@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col s4 card amber darken-4">
+        <h1>Recipe List</h1>
+        {{#each recipes}}
+            <div>
+                <ul>
+                    <li>{{this.name}}</li>
+                    </br>
+                </ul>
+        
+            </div>
+        {{/each}}
+    </div>
+
+
+    <div class="col s4 card amber darken-4">
+        
+            <h1>Pantry Check!</h1>
+            {{#each recipes}}
+                    <ul>
+                        <li>{{this.name}}</li>
+                        </br>
+                    </ul>
+                    {{#each ingredients}}
+                        <div>
+                            <ul>
+                                <li> {{this.name}}</li>                          
+                            </ul>      
+                        </div>
+                    {{/each}}
+                    </br>
+            {{/each}}
+           
+    </div>
+
+
+    <div class="col s4 card amber darken-4"> 
+        <h1>How many lunches?</h1>
+        {{#each recipes}}
+            <div>
+                <h3>{{this.servingNumber}}</h3>
+                
+            </div>
+            </br>
+        {{/each}}
+    </div>
+</div>

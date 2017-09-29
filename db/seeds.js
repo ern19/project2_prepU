@@ -57,8 +57,8 @@ const veggieSoupIngredients = [
     new IngredientModel({name: "black beans"})
 ]
 
-const chili = new RecipeModel({ name: 'Crockpot Chili', ingredients: chiliIngredients, url: "http://allrecipes.com/recipe/48449/slow-cooker-chili-ii/", servingNumber: 8, submittedBy: aaronTrammell })
-const beansAndRice = new RecipeModel({ name: 'Black Beans and Rice', ingredients: beansAndRiceIngredients, url: "http://allrecipes.com/recipe/15559/black-beans-and-rice/", servingNumber: 4, submittedBy: aaronTrammell })
+const chili = new RecipeModel({ name: 'Crockpot Chili', ingredients: chiliIngredients, url: "http://allrecipes.com/recipe/48449/slow-cooker-chili-ii/", servingNumber: 8, submittedBy: "Aaron Trammell" })
+const beansAndRice = new RecipeModel({ name: 'Black Beans and Rice', ingredients: beansAndRiceIngredients, url: "http://allrecipes.com/recipe/15559/black-beans-and-rice/", servingNumber: 4, submittedBy: "Aaron Trammell" })
 const veggieSoup = new RecipeModel({ name: 'Big Batch Veggie Soup', ingredients: veggieSoupIngredients, url: "http://www.marthastewart.com/318100/big-batch-vegetable-soup", servingNumber: 10, submittedBy: "Aaron Trammell" })
 
 // Here we assign some snowboards to each company.
