@@ -20,4 +20,15 @@ router.get('/new', (request, response) => {
     // RENDER an empty form for the new recipe
     response.render('recipes/new')
 })
+
+router.post("/", (request, response) => {
+    const newRecipe = request.body
+    RecipeModel.create(newRecipe)
+        .then(() => {
+            response.redirect("/recipes")
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+})
 module.exports = router

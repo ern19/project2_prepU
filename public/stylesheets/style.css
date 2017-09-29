@@ -1,4 +1,6 @@
-
+* {
+  font: Helvetica;
+}
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -24,4 +26,8 @@ body {
 }
 .returnAnchor {
   color: #ff6f00
+}
+.submitButton {
+  color: #263238;
+  background-color: #ff6f00
 }
