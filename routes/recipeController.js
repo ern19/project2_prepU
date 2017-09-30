@@ -72,20 +72,36 @@ router.get("/:recipeId", (request, response) => {
 })
 
 router.put("/:recipeId", (request, response) => {
-    recipeId = request.params.recipeId
+    const recipeId = request.params.recipeId
 
     const updatedRecipe = request.body
 
-    console.log(updatedRecipe)
+    
     const ingredients = updatedRecipe.name.map(ingredient =>{
         return new IngredientModel({name: ingredient})
     })
     
     updatedRecipe.ingredients = ingredients
-    
-    RecipeModel.findByIdAndUpdate(recipeId)
+    console.log(ingredients)
+   
+        // Yes, it's a valid ObjectId, proceed with `findById` call.
+      
+        RecipeModel.findByIdAndUpdate(recipeId)
+            .then(() => {
+                response.redirect("/recipes/recipeId")
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+
+})
+
+router.get("/:recipeId/delete", (request, response) => {
+    const recipeId = request.params.recipeId
+
+    RecipeModel.findByIdAndRemove(recipeId)
         .then(() => {
-            response.redirect("/recipes/recipeId")
+            response.redirect("/recipes")
         })
         .catch((error) => {
             console.log(error)
