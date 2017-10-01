@@ -26,7 +26,7 @@ router.get('/new', (request, response) => {
 //create route
 router.post("/", (request, response) => {
     const newRecipe = request.body
-    // console.log(newRecipe)
+    console.log(newRecipe)
     const ingredients = newRecipe.ingredients.map(ingredient =>{
         return new IngredientModel({name: ingredient})
     })
@@ -86,9 +86,9 @@ router.put("/:recipeId", (request, response) => {
    
         // Yes, it's a valid ObjectId, proceed with `findById` call.
       
-        RecipeModel.findByIdAndUpdate(recipeId)
+        RecipeModel.findByIdAndUpdate(recipeId, updatedRecipe, { new: true })
             .then(() => {
-                response.redirect("/recipes/recipeId")
+                response.redirect("/recipes")
             })
             .catch((error) => {
                 console.log(error)
