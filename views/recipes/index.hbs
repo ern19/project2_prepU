@@ -50,11 +50,13 @@ that recipe will display--}}
     <div class="col s4 card amber darken-4"> 
         <h1>How many lunches?</h1>
         {{#each recipes}}
-            <div class="servingNumber">
-                <h3>{{this.servingNumber}}</h3>
-                
+            <div class="servings" id="{{@index}}">
+                <div>
+                    <h3>{{this.servingNumber}}</h3>
+                    
+                </div>
+                </br>
             </div>
-            </br>
         {{/each}}
     </div>
 </div>

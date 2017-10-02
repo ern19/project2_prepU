@@ -9,7 +9,9 @@ body {
 .recipe {
   display: none
 }
-
+.servings {
+  display: none
+}
 .recipeTitle {
   text-decoration: underline;
 }
