@@ -17,22 +17,23 @@
     <div class="col s4 card amber darken-4">
         
             <h1>Pantry Check!</h1>
-            {{#each recipes}}
-                    <ul>
-                        <h5 class="recipeTitle">{{this.name}}</h5>
+            <div class="recipeText">
+                {{#each recipes}}
+                        <ul>
+                            <h5 class="recipeTitle">{{this.name}}</h5>
+                            </br>
+                        </ul>
+                        {{#each ingredients}}
+                            <div>
+                                <ul>
+                                    <li> {{this.name}}</li>                          
+                                </ul>      
+                            </div>
+                        {{/each}}
+                        <a href="{{this.url}}">Passed the pantry test? Get to cooking!</a>
                         </br>
-                    </ul>
-                    {{#each ingredients}}
-                        <div>
-                            <ul>
-                                <li> {{this.name}}</li>                          
-                            </ul>      
-                        </div>
-                    {{/each}}
-                    <a href="{{this.url}}">Passed the pantry test? Get to cooking!</a>
-                    </br>
-            {{/each}}
-        
+                {{/each}}
+            </div> 
     </div>
 
 

@@ -73,16 +73,20 @@ router.get("/:recipeId", (request, response) => {
 
 router.put("/:recipeId", (request, response) => {
     const recipeId = request.params.recipeId
-
+    //grabs recipeId from url
     const updatedRecipe = request.body
-
+    console.log(updatedRecipe)
     
-    const ingredients = updatedRecipe.name.map(ingredient =>{
+    // grabs form content
+   
+    const ingredients = updatedRecipe.ingredients.map(ingredient =>{
         return new IngredientModel({name: ingredient})
+            // console.log(ingredients)
     })
+    // returns the form inputs in the format of the IngredientModel. I think.
+    updatedRecipe.ingredients = ingredients //assigns the result of the above function to the now updated recipe
+    console.log(updatedRecipe.ingredients)
     
-    updatedRecipe.ingredients = ingredients
-    console.log(ingredients)
    
         // Yes, it's a valid ObjectId, proceed with `findById` call.
       
