@@ -1,10 +1,17 @@
 <div class="row">
     <div class="col s4 card amber darken-4">
         <h1>Recipe List</h1>
+{{!-- When each recipe is added to the div, it gets assigned a 
+unique class which will correspond to a list of ingredients, so
+that when it's clicked, only the ingredients and servings for
+that recipe will display--}}
         {{#each recipes}}
+            {{!-- <span></span> --}}
             <div>
                 <ul>
                     <li><a class="recipeLinks" href="recipes/{{this._id}}">{{this.name}}</li></a>
+                    
+                    <p class="viewIngredients" data-recipe="{{@index}}"><i>View ingredients and # of servings</i></p>
                     </br>
                 </ul>
         
@@ -17,21 +24,24 @@
     <div class="col s4 card amber darken-4">
         
             <h1>Pantry Check!</h1>
+
             <div class="recipeText">
                 {{#each recipes}}
-                        <ul>
-                            <h5 class="recipeTitle">{{this.name}}</h5>
+                        <div class="recipe" id="{{@index}}">
+                            <ul>
+                                <h5 class="recipeTitle">{{this.name}}</h5>
+                                </br>
+                            </ul>
+                            {{#each ingredients}}
+                                <div class="recipeIngredients">
+                                    <ul>
+                                        <li> {{this.name}}</li>                          
+                                    </ul>      
+                                </div>
+                            {{/each}}
+                            <a href="{{this.url}}">Passed the pantry test? Get to cooking!</a>
                             </br>
-                        </ul>
-                        {{#each ingredients}}
-                            <div>
-                                <ul>
-                                    <li> {{this.name}}</li>                          
-                                </ul>      
-                            </div>
-                        {{/each}}
-                        <a href="{{this.url}}">Passed the pantry test? Get to cooking!</a>
-                        </br>
+                        </div>
                 {{/each}}
             </div> 
     </div>
@@ -40,7 +50,7 @@
     <div class="col s4 card amber darken-4"> 
         <h1>How many lunches?</h1>
         {{#each recipes}}
-            <div>
+            <div class="servingNumber">
                 <h3>{{this.servingNumber}}</h3>
                 
             </div>

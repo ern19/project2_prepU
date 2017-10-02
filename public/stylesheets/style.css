@@ -6,7 +6,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #263238 
 }
-
+.recipe {
+  display: none
+}
 
 .recipeTitle {
   text-decoration: underline;
@@ -36,4 +38,7 @@ body {
 }
 input {
   color: white
+}
+.row .col.s4 {
+  min-height: 575px
 }
