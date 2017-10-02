@@ -16,10 +16,11 @@ body {
   text-decoration: underline;
 }
 .recipeLinks {
-  color: #263238
+  color: #263238;
+  font-size: 24px
 }
 .recipeLinks:hover {
-  font-size: 18px;
+  font-size: 26px;
 }
 .mainHeader {
   color: #ff6f00
@@ -42,5 +43,15 @@ input {
   color: white
 }
 .row .col.s4 {
-  min-height: 575px
+  min-height: 575px;
+  text-align: center
+}
+#left {
+  padding-bottom: 20px
+}
+#servingNumber {
+  margin: auto
+}
+.ingredientLabel {
+  color: #263238;
 }

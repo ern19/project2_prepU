@@ -1,6 +1,6 @@
 <div class="row">
-    <div class="col s4 card amber darken-4">
-        <h1>Recipe List</h1>
+    <div class="col s4 card amber darken-4" id="left">
+        <h2>Recipe List</h2>
 {{!-- When each recipe is added to the div, it gets assigned a 
 unique class which will correspond to a list of ingredients, so
 that when it's clicked, only the ingredients and servings for
@@ -20,10 +20,9 @@ that recipe will display--}}
         <a class="recipeLinks" href="recipes/new">Share your favorite recipe...</a>
     </div>
 
-
     <div class="col s4 card amber darken-4">
         
-            <h1>Pantry Check!</h1>
+            <h2>Pantry Check!</h2>
 
             <div class="recipeText">
                 {{#each recipes}}
@@ -32,13 +31,15 @@ that recipe will display--}}
                                 <h5 class="recipeTitle">{{this.name}}</h5>
                                 </br>
                             </ul>
+                             <form action="#">
                             {{#each ingredients}}
-                                <div class="recipeIngredients">
-                                    <ul>
-                                        <li> {{this.name}}</li>                          
-                                    </ul>      
-                                </div>
+                                   <p class="inputText">
+                                    <input type="checkbox" id="{{this._id}}"/>
+                                    <label for="{{this._id}}" class="ingredientLabel">{{this.name}}</label>
+                                   </p>
                             {{/each}}
+                            </form>
+                            </br>
                             <a href="{{this.url}}">Passed the pantry test? Get to cooking!</a>
                             </br>
                         </div>
@@ -48,10 +49,10 @@ that recipe will display--}}
 
 
     <div class="col s4 card amber darken-4"> 
-        <h1>How many lunches?</h1>
+        <h2>How many lunches?</h2>
         {{#each recipes}}
             <div class="servings" id="{{@index}}">
-                <div>
+                <div  id="servingNumber">
                     <h3>{{this.servingNumber}}</h3>
                     
                 </div>
