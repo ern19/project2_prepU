@@ -16,6 +16,7 @@ $( ".viewIngredients" ).click(function() {
     const recipeIndex = $( this ).data("recipe")
     $(".servings").css("display", "none")
     $(`#${recipeIndex}.servings`).css("display", "block")
+
     console.log($(`#${recipeIndex}.servings`))
  })
 //the ingredients and servings for that recipe appears in the center
