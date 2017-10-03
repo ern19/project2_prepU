@@ -22,9 +22,7 @@ body {
 .recipeLinks:hover {
   font-size: 26px;
 }
-.mainHeader {
-  color: #ff6f00
-}
+
 .nav-wrapper {
   background-color: #ff6f00;
   border-radius: 8px
@@ -54,4 +52,33 @@ input {
 }
 .ingredientLabel {
   color: #263238;
+}
+/* #login.row {
+  display: flex;
+  justify-content: right
+}  */
+.titleAnchor {
+  color:#ff6f00;
+  display: inline-flex;
+  flex-direction: row;
+  /* justify-content: left */
+}
+.subtitle {
+  color: #ff6f00;
+ 
+}
+
+.loginBox {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: right;
+} 
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.mainHeader {
+  color: #ff6f00
 }
