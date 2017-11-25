@@ -86,3 +86,7 @@ header {
 .mainHeader {
   color: #ff6f00
 }
+
+.ingredients {
+  cursor: pointer;
+}
